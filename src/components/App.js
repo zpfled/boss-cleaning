@@ -46,14 +46,16 @@ export default class App extends Component {
   }
 
   render() {
+    const props = this.state;
+    
     return (
       <BrowserRouter>
         <MuiThemeProvider muiTheme={bossTheme}>
           <StickyContainer>
             <NavHeader/>
 
-            <Route exact path="/" component={Home}/>
-            <Route path="/contact" component={Contact}/>
+            <Route exact path="/" component={() => <Home { ...props }/>}/>
+            <Route path="/contact" component={() => <Contact { ...props }/>}/>
           </StickyContainer>
         </MuiThemeProvider>
       </BrowserRouter>

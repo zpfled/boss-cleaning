@@ -10,6 +10,8 @@ const HEADER_COLOR = { color: PRIMARY_COLOR };
 
 export default class Home extends PureComponent {
   render() {
+    const { services, loadingServices } = this.props;
+
     return (
       <main>
         <section
@@ -52,7 +54,7 @@ export default class Home extends PureComponent {
           <div className="flex-grow-1"></div>
         </section>
 
-        <LoadingWrapper className="mg-top-xl" loading={!!this.state.loadingServices}>
+        <LoadingWrapper className="mg-top-xl" loading={!!loadingServices}>
           <section className="max-width">
             <h2 style={{ ...HEADER_COLOR, textAlign: 'center' }}>
               How does it work?
@@ -66,7 +68,7 @@ export default class Home extends PureComponent {
             </p>
             <ul className="display-flex flex-wrap-wrap pd-left-none justify-content-center">
               {
-                this.state.services.map(({ name, cost, basis, description }) => {
+                services.map(({ name, cost, basis, description }) => {
                   return (
                     <li style={{ listStyle: 'none' }} className="mg-sm">
                       <RaisedButton
