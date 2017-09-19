@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
 import 'fastmodel-utility-classes';
-import logo from '../res/images/logo.jpg';
+import logo from '../res/images/logo-green.jpg';
 import Avatar from 'material-ui/Avatar';
 import RaisedButton from 'material-ui/RaisedButton';
 import { Sticky } from 'react-sticky';
 import TableTop from 'tabletop';
 
 const SPREADSHEET_URL = 'https://docs.google.com/spreadsheets/d/1QpujZJ378YYALyVtSPPSvZG4P1ZP8JljC7Fcmm0sleo/pub?output=csv';
-// This replaces the textColor value on the palette
-// and then update the keys for each component that depends on it.
-// More on Colors: http://www.material-ui.com/#/customization/colors
-const PRIMARY_COLOR = '#2E5CAB';
 
 export default class Home extends Component {
 
@@ -49,13 +45,13 @@ export default class Home extends Component {
                 <Avatar src={logo} size={100}/>
               </div>
               <span>
-                  <RaisedButton
-                    onTouchTap={() => alert('link to section below with quote wizard')}
-                    label="Get a quote"
-                    containerElement="button"
-                    primary
-                  />
-                </span>
+                <RaisedButton
+                  onTouchTap={() => alert('link to section below with quote wizard')}
+                  label="Get a quote"
+                  containerElement="button"
+                  primary
+                />
+              </span>
             </div>
           </header>
         )}

@@ -17,7 +17,8 @@ const SPREADSHEET_URL = 'https://docs.google.com/spreadsheets/d/1QpujZJ378YYALyV
 // This replaces the textColor value on the palette
 // and then update the keys for each component that depends on it.
 // More on Colors: http://www.material-ui.com/#/customization/colors
-export const PRIMARY_COLOR = '#2E5CAB';
+// export const PRIMARY_COLOR = '#2E5CAB';
+export const PRIMARY_COLOR = '#2EA586';
 const bossTheme = getMuiTheme({
   palette: {
     primary1Color: PRIMARY_COLOR,
@@ -47,7 +48,7 @@ export default class App extends Component {
 
   render() {
     const props = this.state;
-    
+
     return (
       <BrowserRouter>
         <MuiThemeProvider muiTheme={bossTheme}>
@@ -56,6 +57,12 @@ export default class App extends Component {
 
             <Route exact path="/" component={() => <Home { ...props }/>}/>
             <Route path="/contact" component={() => <Contact { ...props }/>}/>
+            <footer className="bg-color-secondary color-white display-flex justify-content-space-between pd-lg">
+              <ul className="max-width">
+                <li>Contact Info</li>
+                <li>Social Media Info</li>
+              </ul>
+            </footer>
           </StickyContainer>
         </MuiThemeProvider>
       </BrowserRouter>

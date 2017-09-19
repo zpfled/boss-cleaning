@@ -70,7 +70,7 @@ export default class Home extends PureComponent {
               {
                 services.map(({ name, cost, basis, description }) => {
                   return (
-                    <li style={{ listStyle: 'none' }} className="mg-sm">
+                    <li key={name} style={{ listStyle: 'none' }} className="mg-sm">
                       <RaisedButton
                         style={{ height: 'auto' }}
                         onTouchTap={() => alert(`This will lead to requesting a quote for a ${name}`)}>
@@ -148,13 +148,6 @@ export default class Home extends PureComponent {
             primary
           />
         </section>
-
-        <footer className="bg-color-secondary color-white display-flex justify-content-space-between pd-lg">
-          <ul className="max-width">
-            <li>Contact Info</li>
-            <li>Social Media Info</li>
-          </ul>
-        </footer>
       </main>
     );
   }
